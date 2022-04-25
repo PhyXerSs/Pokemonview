@@ -24,8 +24,8 @@ function SearchPage() {
     
     return (
         <div className="mt-40 w-full flex flex-col justify-center items-center">
-            <div className="flex flex-col items-center justify-center shadow-lg shadow-slate-400 rounded-md" style={{width:896}} >
-                <h1 className="text-4xl font-bold text-gray-700 rounded-full mt-3 py-2 px-6 shadow-lg shadow-gray-400">{params.id?.toUpperCase()}</h1>
+            <div className="flex flex-col items-center justify-center shadow-lg shadow-slate-400 rounded-md relative bg-gradient-to-b from-white to-gray-100" style={{width:896}} >
+                <h1 className="text-4xl font-bold text-gray-700 rounded-full absolute -top-7  py-2 px-6 shadow-lg shadow-gray-400 bg-gradient-to-b from-white to-gray-300">{params.id?.toUpperCase()}</h1>
                 { pokemonData &&
                 <div className="mt-20 flex flex-wrap justify-around w-full mb-12">
                     <div className="items-center justify-center flex rounded-2xl shadow-lg shadow-slate-600 bg-gradient-to-br from-stone-500 to-white">

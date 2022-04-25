@@ -1,7 +1,7 @@
 // @ts-nocheck - may need to be at the start of file
 import React, { PropsWithChildren, useEffect, useState } from 'react'
 import { useRecoilState, useRecoilValue } from 'recoil';
-import { allPokemonDataState, randomNumberState } from '../StateManagement/Atoms';
+import { allPokemonDataState, randomNumberState, themeState } from '../StateManagement/Atoms';
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
@@ -54,6 +54,7 @@ function FeaturePokemon() {
     const [indexRandom ,setIndexRandom] = useState<number[] | null>(null);
     const allPokemonData = useRecoilValue(allPokemonDataState);
     const navigate = useNavigate();
+    const darkmode = useRecoilValue(themeState);
     useEffect(()=>{
         // console.log(allPokemonData.length);
         if(indexRandom === null ){
@@ -71,7 +72,7 @@ function FeaturePokemon() {
     
     
     return (
-        <div className="mt-10 max-w-4xl w-full flex flex-col shadow-lg shadow-slate-300 items-left rounded-xl z-0">
+        <div className={`mt-10 max-w-4xl w-full flex flex-col shadow-lg shadow-slate-300 items-left rounded-xl z-0  bg-gradient-to-b from-white to-gray-100`}>
                 <h2 className="text-xl font-bold text-gray-600 mt-5 ml-7 z-0" >Featured Pokémon</h2>
                 <div className="w-full mt-7 flex items-center justify-center z-0">
                     <Swiper
