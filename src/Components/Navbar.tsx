@@ -34,7 +34,7 @@ export default function Navbar() {
         >
             <div className="max-w-4xl w-full flex items-center justify-between">
                 <div className="flex items-center justify-between w-24 gap-2 ml-6 cursor-pointer"
-                    onClick={()=>handleSearch('')}
+                    onClick={()=>{handleSearch('');}}
                 >
                     <img className="h-12" src={logo1}/>
                     <img src={logo2}/>
@@ -75,6 +75,14 @@ export default function Navbar() {
                 <div className={`shadow-md  ${darkMode ? '' : 'shadow-gray-400'} flex items-center w-14 h-6 mr-6 ${darkMode ?'bg-gray-600' : 'bg-blue-500'  } rounded-xl cursor-pointer ease-in duration-300 relative`} 
                     onClick={()=>setDarkMode(!darkMode)}
                 >
+                    { !darkMode  &&
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 absolute right-1 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>}
+                    {darkMode  &&
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 absolute left-1 text-yellow-300" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
+                        </svg>}
                     <div className={`bg-white  w-5 h-5 rounded-xl m-0.5 ease-in duration-300 absolute top-0 bottom-0 ${darkMode ? 'right-0' : 'right-8'} shadow-inner shadow-gray-400 hover:shadow-white`}></div>
                 </div>
             </div>

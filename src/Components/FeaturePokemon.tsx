@@ -11,6 +11,43 @@ import "swiper/css/navigation";
 import { EffectCoverflow, Pagination ,Navigation } from "swiper";
 import { useNavigate } from 'react-router-dom';
 
+export function selectTypeColor(type: string){
+    if(type === 'water')
+        return 'bg-blue-600';
+    else if(type === 'poison')
+        return 'bg-purple-800'
+    else if(type === 'bug')
+        return 'bg-green-900'
+    else if(type==='grass')
+        return 'bg-green-500'
+    else if(type==='normal')
+        return 'bg-gray-500'
+    else if(type ==='fighting')
+        return 'bg-orange-500'
+    else if(type ==='rock')
+        return 'bg-slate-900'
+    else if(type ==='ice')
+        return 'bg-cyan-400'
+    else if(type ==='ground')
+        return 'bg-orange-900'
+    else if(type ==='dragon')
+        return 'bg-orange-300'
+    else if(type ==='fairy')
+        return 'bg-pink-400'
+    else if(type ==='psychic')
+        return 'bg-purple-400'
+    else if(type ==='fire')
+        return 'bg-red-600'
+    else if(type==='flying')
+        return 'bg-lime-300'
+    else if(type==='electric')
+        return 'bg-yellow-400'
+    else if(type ==='ghost')
+        return 'bg-slate-900'
+    else if(type ==='steel')
+        return 'bg-slate-500'
+    else return 'bg-black'
+}   
 
 
 function FeaturePokemon() {
@@ -31,46 +68,10 @@ function FeaturePokemon() {
         }
     },[])
 
-    function selectTypeColor(type: string){
-        if(type === 'water')
-            return 'bg-blue-600';
-        else if(type === 'poison')
-            return 'bg-purple-800'
-        else if(type === 'bug')
-            return 'bg-green-900'
-        else if(type==='grass')
-            return 'bg-green-500'
-        else if(type==='normal')
-            return 'bg-gray-500'
-        else if(type ==='fighting')
-            return 'bg-orange-500'
-        else if(type ==='rock')
-            return 'bg-slate-900'
-        else if(type ==='ice')
-            return 'bg-cyan-400'
-        else if(type ==='ground')
-            return 'bg-orange-900'
-        else if(type ==='dragon')
-            return 'bg-orange-300'
-        else if(type ==='fairy')
-            return 'bg-pink-400'
-        else if(type ==='psychic')
-            return 'bg-purple-400'
-        else if(type ==='fire')
-            return 'bg-red-600'
-        else if(type==='flying')
-            return 'bg-lime-300'
-        else if(type==='electric')
-            return 'bg-yellow-400'
-        else if(type ==='ghost')
-            return 'bg-slate-900'
-        else if(type ==='steel')
-            return 'bg-slate-500'
-        else return 'bg-black'
-    }   
+    
     
     return (
-        <div className="mt-10 max-w-4xl w-full flex flex-col shadow-lg items-left rounded-xl z-0">
+        <div className="mt-10 max-w-4xl w-full flex flex-col shadow-lg shadow-slate-300 items-left rounded-xl z-0">
                 <h2 className="text-xl font-bold text-gray-600 mt-5 ml-7 z-0" >Featured Pokémon</h2>
                 <div className="w-full mt-7 flex items-center justify-center z-0">
                     <Swiper
@@ -94,7 +95,7 @@ function FeaturePokemon() {
                         allPokemonData.map((pokemon , index)=>{
                             if(indexRandom.includes(index)){
                                 return ( 
-                                        <SwiperSlide key={index} className="z-0 flex flex-col items-center shadow-lg rounded-lg cursor-pointer"
+                                        <SwiperSlide key={index} className="z-0 flex flex-col items-center shadow-lg shadow-gray-400 rounded-lg cursor-pointer"
                                             onClick={()=>{ navigate(`/search/${pokemon.name}`) }}
                                         >
                                             <img src={pokemon.artwork} />
