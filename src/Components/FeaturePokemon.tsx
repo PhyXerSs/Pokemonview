@@ -59,7 +59,7 @@ function FeaturePokemon() {
         // console.log(allPokemonData.length);
         if(indexRandom === null ){
             let tmpIndexArray = [] as number[];
-            for(let i = 0 ; i < 10 ; i++){
+            for(let i = 0 ; i < 20 ; i++){
                 let num = Math.floor(Math.random() * ( 600 ))
                 // console.log(tmp);
                 tmpIndexArray.push(num);
@@ -72,7 +72,7 @@ function FeaturePokemon() {
     
     
     return (
-        <div className={`mt-10 max-w-4xl w-full flex flex-col shadow-lg shadow-slate-300 items-left rounded-xl z-0  bg-gradient-to-b from-white to-gray-100`}>
+        <div className={`mt-10 max-w-4xl w-full flex flex-col shadow-lg shadow-slate-300 items-left rounded-xl z-0  bg-gradient-to-b from-white to-gray-100 pb-4`}>
                 <h2 className="text-xl font-bold text-gray-600 mt-5 ml-7 z-0" >Featured Pokémon</h2>
                 <div className="w-full mt-7 flex items-center justify-center z-0">
                     <Swiper
@@ -90,7 +90,7 @@ function FeaturePokemon() {
                         pagination={true}
                         navigation={true}
                         modules={[EffectCoverflow, Pagination ,Navigation]}
-                        className="-z-10 mb-2"
+                        className="-z-10 pb-7 pt-5"
                     >
                     {indexRandom &&
                         allPokemonData.map((pokemon , index)=>{
@@ -110,7 +110,7 @@ function FeaturePokemon() {
                                                     <h3 className="text-base font-semibold">Type</h3>
                                                     <div className='flex flex-wrap items-center ml-7 justify-start'>
                                                         {pokemon.types.map((type,index)=>(
-                                                            <p key={index} className={`mr-1 lg:mr-3 ${selectTypeColor(type)} px-2 rounded-xl text-white font-semibold`}>{type}</p>
+                                                            <p key={index} className={`mr-1 lg:mr-3 ${selectTypeColor(type)} px-2 rounded-xl text-white font-semibold shadow-lg shadow-slate-400`}>{type}</p>
                                                         ))}
                                                     </div>
                                                 </div>
